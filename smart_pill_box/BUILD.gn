@@ -1,0 +1,36 @@
+static_library("smart_pill_box")
+{
+    sources = [
+        "smart_pill_box.c",
+        "src/adc_key.c",
+        "src/picture.c",
+        "src/smart_box.c",
+        "src/smart_box_event.c",
+        "src/drv_light.c",
+        "src/drv_sensors.c",
+        "src/lcd.c",
+        "src/su_03t.c",
+        "src/iot.c",
+        "src/ntp.c",
+        "src/drv_steering.c",
+    ]
+
+    include_dirs = [
+    "//utils/native/lite/include",
+    "include",
+    "//kernel/liteos_m/components/shell/include",
+    "//base/iot_hardware/peripheral/interfaces/kits",
+    "//device/rockchip/rk2206/adapter/include",
+    "//device/rockchip/rk2206/sdk_liteos/board/include",
+    "//device/rockchip/hardware/lib/hal/inc",
+    "//device/rockchip/hardware/lib/CMSIS/Device/RK2206/Include/",
+    "//third_party/cJSON",
+    "//third_party/musl/porting/liteos_m/kernel/include",
+    "//third_party/paho_mqtt/MQTTPacket/src",
+    "//third_party/paho_mqtt/MQTTClient-C/src",
+    ]
+
+    deps = [
+        "//device/rockchip/hardware:hardware",
+    ]
+}
